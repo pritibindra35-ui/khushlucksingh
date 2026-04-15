@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khushluck Singh | AI Educator • Developer • YouTuber</title>
+  <meta name="description" content="Khushluck Singh - 16-year-old AI educator, Python developer, growth strategist and creator of NeuralSyntax YouTube channel." />
+  <meta name="keywords" content="Khushluck Singh, NeuralSyntax, AI educator, Python developer, student portfolio, YouTuber, Delhi, Tailwind, SQLite, machine learning" />
+  <meta name="author" content="Khushluck Singh" />
+  <meta property="og:title" content="Khushluck Singh | Portfolio" />
+  <meta property="og:description" content="16-year-old Class 12 student from Delhi building Python tools, explaining AI for students, and growing NeuralSyntax." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='28' fill='%2301696f'/%3E%3Cpath d='M31 26h13v29l26-29h17L58 58l31 36H72L48 65v29H31V26z' fill='white'/%3E%3C/svg%3E" />
+  <meta property="og:url" content="https://example.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Khushluck Singh | Portfolio" />
+  <meta name="twitter:description" content="AI educator, Python developer and creator of NeuralSyntax." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='28' fill='%2301696f'/%3E%3Cpath d='M31 26h13v29l26-29h17L58 58l31 36H72L48 65v29H31V26z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-GY6mC7QCz4KJ2Vw6u1oGUNShUMHbOWcZH/5LiCFYI8a9kaI0s5momkGLumZ5qX6Ch12yvDregO/flMHDL/95Bग==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js" defer></script>
+  <style>
+    :root,
+    [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 4.75rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem;
+      --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1.1rem; --radius-xl: 1.5rem; --radius-full: 9999px;
+      --color-bg: #f7f6f2; --color-surface: #fbfbf9; --color-surface-2: #f0eeea; --color-surface-3: #e8e5de;
+      --color-border: rgba(40,37,29,.12); --color-text: #28251d; --color-text-muted: #66625b; --color-text-faint: #8b877f;
+      --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-secondary: #0d99a1; --color-accent: #d19900;
+      --color-success: #437a22; --color-card-glow: rgba(1,105,111,.12); --shadow-sm: 0 6px 18px rgba(15, 23, 42, .06);
+      --shadow-md: 0 20px 40px rgba(15, 23, 42, .09); --shadow-lg: 0 30px 70px rgba(15, 23, 42, .12);
+      --font-body: 'Inter', sans-serif; --font-display: 'Space Grotesk', sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #0c1117; --color-surface: #121923; --color-surface-2: #18212c; --color-surface-3: #1d2835;
+      --color-border: rgba(255,255,255,.10); --color-text: #e9eef7; --color-text-muted: #9aa8bb; --color-text-faint: #718198;
+      --color-primary: #53c8cf; --color-primary-hover: #87dde1; --color-secondary: #8e9cff; --color-accent: #ffce56;
+      --color-success: #73d176; --color-card-glow: rgba(83,200,207,.15); --shadow-sm: 0 8px 16px rgba(0,0,0,.25);
+      --shadow-md: 0 18px 36px rgba(0,0,0,.35); --shadow-lg: 0 30px 80px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem}
+    body{font-family:var(--font-body);font-size:var(--text-base);background:radial-gradient(circle at top right, rgba(83,200,207,.12), transparent 24%), radial-gradient(circle at left center, rgba(142,156,255,.10), transparent 20%), var(--color-bg);color:var(--color-text);line-height:1.6;cursor:none}
+    a{text-decoration:none;color:inherit}
+    img,iframe{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
+    .container{width:min(1120px, calc(100% - 2rem));margin-inline:auto}
+    .section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-full);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary);background:color-mix(in srgb,var(--color-primary) 8%, transparent)}
+    .section-title{font-family:var(--font-display);font-size:var(--text-2xl);line-height:1.05;margin:1rem 0}
+    .section-copy{max-width:64ch;color:var(--color-text-muted)}
+    .skip-link{position:absolute;left:-999px;top:0}.skip-link:focus{left:1rem;top:1rem;padding:.75rem 1rem;background:var(--color-primary);color:#001214;border-radius:var(--radius-md);z-index:9999}
+    .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+    .cursor-dot{width:10px;height:10px;border-radius:50%;background:var(--color-primary)}
+    .cursor-ring{width:34px;height:34px;border:1px solid color-mix(in srgb,var(--color-primary) 65%, transparent);border-radius:50%;transition:width .2s ease,height .2s ease,border-color .2s ease,transform .08s linear}
+    .site-header{position:sticky;top:0;z-index:1000;background:color-mix(in srgb,var(--color-bg) 75%, transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--color-border)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:4.75rem;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.9rem;font-weight:700}
+    .logo-mark{width:44px;height:44px;padding:.55rem;border-radius:1rem;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));box-shadow:0 0 0 6px color-mix(in srgb,var(--color-primary) 10%, transparent)}
+    .brand-text{display:flex;flex-direction:column;line-height:1.05}.brand-text strong{font-family:var(--font-display)}.brand-text span{font-size:var(--text-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted)}
+    .nav-links{display:flex;align-items:center;gap:1.15rem}
+    .nav-links a{position:relative;padding:.6rem .15rem;color:var(--color-text-muted);font-size:var(--text-sm)}
+    .nav-links a.active,.nav-links a:hover{color:var(--color-primary)}
+    .nav-links a.active::after,.nav-links a:hover::after{content:"";position:absolute;left:0;right:0;bottom:.2rem;height:2px;background:var(--color-primary);border-radius:999px}
+    .nav-actions{display:flex;align-items:center;gap:.75rem}
+    .theme-toggle,.menu-toggle,.icon-btn{min-width:44px;min-height:44px;display:grid;place-items:center;border:1px solid var(--color-border);border-radius:999px;background:var(--color-surface);color:var(--color-text)}
+    .menu-toggle{display:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.9rem 1.2rem;border-radius:999px;border:1px solid transparent;font-weight:600;min-height:46px}
+    .btn-primary{background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#031317;box-shadow:var(--shadow-md)}
+    .btn-secondary{border-color:var(--color-border);background:var(--color-surface)}
+    .btn-ghost{color:var(--color-primary)}
+    .hero{padding:clamp(5rem,9vw,8rem) 0 4rem}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero h1{font-family:var(--font-display);font-size:var(--text-3xl);line-height:.98;max-width:10ch;margin:1rem 0}
+    .typed-line{color:var(--color-primary);min-height:2rem;font-size:var(--text-lg);font-weight:700}
+    .hero-copy{max-width:62ch;color:var(--color-text-muted);margin-bottom:1.5rem}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin:1.75rem 0}
+    .quick-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+    .metric-card,.card,.glass-card{background:linear-gradient(180deg,color-mix(in srgb,var(--color-surface) 88%, transparent),var(--color-surface));border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
+    .metric-card{padding:1rem 1.1rem}.metric-card strong{display:block;font-size:var(--text-xl);font-family:var(--font-display)}.metric-card span{color:var(--color-text-muted);font-size:var(--text-sm)}
+    .hero-panel{padding:1.2rem;display:grid;gap:1rem;position:relative;overflow:hidden}
+    .hero-panel::before{content:"";position:absolute;inset:auto -10% -20% auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,var(--color-card-glow),transparent 70%)}
+    .profile-card{display:grid;gap:1rem;padding:1rem;border-radius:calc(var(--radius-xl) - .35rem);background:linear-gradient(180deg,color-mix(in srgb,var(--color-primary) 11%, transparent),transparent 42%),var(--color-surface-2)}
+    .avatar{aspect-ratio:1/1;border-radius:1.25rem;display:grid;place-items:center;background:linear-gradient(135deg,rgba(83,200,207,.18),rgba(142,156,255,.16));font-family:var(--font-display);font-size:4rem;font-weight:700;color:var(--color-primary);border:1px solid var(--color-border)}
+    .floating-note{padding:1rem;border-radius:1rem;border:1px solid var(--color-border);background:var(--color-surface)}
+    .kpi-bar{height:12px;border-radius:999px;background:var(--color-surface-3);overflow:hidden;margin-top:.55rem}.kpi-fill{height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--color-primary),var(--color-accent));width:0}
+    .stats-grid,.skills-grid,.contact-grid,.youtube-grid,.experience-grid,.learning-grid,.testimonial-grid,.blog-grid{display:grid;gap:1.25rem}
+    .stats-grid{grid-template-columns:repeat(4,1fr);margin-top:2rem}
+    .stat-card{padding:1.25rem}.stat-card h3{font-size:var(--text-2xl);font-family:var(--font-display)}.stat-card p{color:var(--color-text-muted)}
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.5rem;align-items:start;margin-top:2rem}
+    .card{padding:1.35rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1rem}.tag{padding:.5rem .8rem;border-radius:999px;background:var(--color-surface-2);border:1px solid var(--color-border);font-size:var(--text-xs);color:var(--color-text-muted)}
+    .timeline{display:grid;gap:1rem}.timeline-item{padding:1rem 0 1rem 1.2rem;border-left:2px solid color-mix(in srgb,var(--color-primary) 45%, var(--color-border));position:relative}.timeline-item::before{content:"";position:absolute;left:-8px;top:1.25rem;width:14px;height:14px;background:var(--color-primary);border-radius:50%;box-shadow:0 0 0 6px color-mix(in srgb,var(--color-primary) 12%, transparent)}
+    .skills-grid{grid-template-columns:1.1fr .9fr;margin-top:2rem}
+    .skill-list{display:grid;gap:1rem}.skill-row{display:grid;gap:.35rem}.skill-head{display:flex;justify-content:space-between;gap:1rem;font-size:var(--text-sm)}.skill-bar{height:10px;border-radius:999px;background:var(--color-surface-3);overflow:hidden}.skill-bar span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--color-primary),var(--color-secondary))}
+    .bento-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:2rem}
+    .project-card{grid-column:span 4;padding:1.25rem;position:relative;overflow:hidden}
+    .project-card.large{grid-column:span 6}.project-card.tall{grid-row:span 2}
+    .project-card::after{content:"";position:absolute;inset:auto -30px -30px auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--color-card-glow),transparent 70%)}
+    .project-card h3{font-size:1.2rem;margin:.85rem 0}.project-card p{color:var(--color-text-muted)}
+    .project-links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+    .project-filter{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}.filter-btn{padding:.65rem .95rem;border-radius:999px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text-muted)}.filter-btn.active,.filter-btn:hover{background:color-mix(in srgb,var(--color-primary) 16%, var(--color-surface));color:var(--color-primary);border-color:color-mix(in srgb,var(--color-primary) 40%, var(--color-border))}
+    .youtube-grid{grid-template-columns:repeat(3,1fr);margin-top:2rem}.video-card iframe{border:0;border-radius:1rem;aspect-ratio:16/9;width:100%}.video-card .meta{padding-top:1rem}
+    .experience-grid{grid-template-columns:repeat(3,1fr);margin-top:2rem}.role-card h3{margin-bottom:.4rem}.role-card p{color:var(--color-text-muted)}
+    .testimonial-grid{grid-template-columns:repeat(3,1fr);margin-top:2rem}.quote{font-size:1.05rem}.person{display:flex;align-items:center;gap:.9rem;margin-top:1rem}.person-badge{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--color-surface-2);font-weight:700;color:var(--color-primary)}
+    .dashboard{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;margin-top:2rem}.counter-box{padding:1.25rem}.counter-box strong{display:block;font-size:var(--text-2xl);font-family:var(--font-display)}.mini-list{display:grid;gap:.8rem;margin-top:1rem}.mini-item{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 1rem;background:var(--color-surface-2);border-radius:1rem;border:1px solid var(--color-border)}
+    .playground{margin-top:2rem}.playground-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:1rem;margin-top:1rem}.terminal{background:#071018;color:#d6f6f8;border:1px solid rgba(83,200,207,.24);border-radius:1.25rem;padding:1rem;box-shadow:var(--shadow-md)}
+    .terminal textarea{width:100%;min-height:280px;background:transparent;border:none;color:inherit;resize:vertical;outline:none;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.95rem;line-height:1.6}
+    .terminal-output{min-height:280px;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.95rem;color:#b9f4ba}
+    .playground-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+    .blog-grid{grid-template-columns:repeat(3,1fr);margin-top:2rem}.blog-card h3{margin:.8rem 0}.blog-card p{color:var(--color-text-muted)}
+    .learning-grid{grid-template-columns:repeat(3,1fr);margin-top:2rem}
+    .contact-grid{grid-template-columns:.95fr 1.05fr;align-items:start;margin-top:2rem}
+    .contact-list{display:grid;gap:.9rem;margin-top:1rem}.contact-item{display:flex;align-items:flex-start;gap:.9rem;padding:1rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:1rem}
+    form{display:grid;gap:1rem}label{display:grid;gap:.45rem;font-size:var(--text-sm)}input,textarea{padding:.95rem 1rem;border-radius:1rem;border:1px solid var(--color-border);background:var(--color-surface-2);color:var(--color-text)}textarea{min-height:160px;resize:vertical}
+    .social-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem}.social-row a{min-width:44px;min-height:44px;padding:.8rem 1rem;border-radius:999px;border:1px solid var(--color-border);background:var(--color-surface);display:inline-flex;align-items:center;gap:.55rem;color:var(--color-text-muted)}.social-row a:hover{color:var(--color-primary);border-color:color-mix(in srgb,var(--color-primary) 40%, var(--color-border))}
+    .footer{padding:2rem 0 3rem;border-top:1px solid var(--color-border);margin-top:2rem}.footer-wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}.footer small{color:var(--color-text-muted)}
+    .scroll-top{position:fixed;right:1.2rem;bottom:1.2rem;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#031317;box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transform:translateY(20px);transition:.25s ease;z-index:900}.scroll-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+    .status-pill{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .8rem;border-radius:999px;background:color-mix(in srgb,var(--color-success) 15%, transparent);color:var(--color-success);font-size:var(--text-xs);border:1px solid color-mix(in srgb,var(--color-success) 35%, transparent)}
+    .muted{color:var(--color-text-muted)}
+    @media (max-width: 980px){
+      .hero-grid,.about-grid,.skills-grid,.dashboard,.playground-grid,.contact-grid{grid-template-columns:1fr}
+      .stats-grid,.youtube-grid,.experience-grid,.testimonial-grid,.blog-grid,.learning-grid{grid-template-columns:repeat(2,1fr)}
+      .project-card,.project-card.large{grid-column:span 6}
+      .nav-links{position:absolute;top:calc(100% + .75rem);left:1rem;right:1rem;display:none;flex-direction:column;align-items:flex-start;padding:1rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:1rem;box-shadow:var(--shadow-md)}
+      .nav-links.open{display:flex}
+      .menu-toggle{display:grid}
+    }
+    @media (max-width: 680px){
+      body{cursor:auto}.cursor-dot,.cursor-ring{display:none}
+      .quick-stats,.stats-grid,.youtube-grid,.experience-grid,.testimonial-grid,.blog-grid,.learning-grid{grid-template-columns:1fr}
+      .bento-grid{grid-template-columns:1fr}.project-card,.project-card.large{grid-column:auto}
+      .nav-actions .btn-secondary{display:none}
+      .hero h1{max-width:none}
+    }
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Khushluck Singh home">
+        <img src="WhatsApp Image 2026-04-03 at 1.08.35 PM.jpeg" alt="" class="size-avatar" style="width:44px;height:44px;border-radius:1rem;object-fit:cover">
+          <path d="M25 18h10v24l22-24h14L46 46l26 32H58L35 51v27H25V18Z" fill="white"/>
+          <path d="M67 74h7" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text"><strong>Khushluck Singh</strong><span>AI Educator • Developer</span></div>
+      </a>
+      <nav aria-label="Primary navigation">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#youtube">Certifications</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">☾</button>
+        <a class="btn btn-secondary" href="#resume"></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div data-aos="fade-up">
+          <span class="eyebrow">Delhi • Student builder • NeuralSyntax</span>
+          <h1>Building AI education systems for students.</h1>
+          <div class="typed-line"><span id="typedRoles"></span></div>
+          <p class="hero-copy">I’m a 16-year-old Class 12 student from Delhi who builds Python tools, breaks down AI for students, and runs NeuralSyntax — a YouTube channel dedicated to making AI education free, useful, and real for Indian students.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">Explore Projects</a>
+            <a class="btn btn-secondary" id="resume" href="data:text/plain;charset=utf-8,Khushluck%20Singh%0AClass%2012%20Student%20%7C%20AI%20Educator%20%7C%20Python%20Developer%0ANeuralSyntax%20Founder%0ADelhi%2C%20India%0A%0AHighlights%3A%0A-%20Built%20Python%2C%20SQLite%2C%20JSON%20and%20ML-based%20student%20tools%0A-%20Runs%20NeuralSyntax%20YouTube%20channel%20focused%20on%20student-friendly%20AI%20education%0A-%20Completed%20multiple%20Python%2C%20Prompt%20Engineering%20and%20Tailwind%20certifications%0A" download="Khushluck-Singh-Resume.txt">Download Resume</a>
+            <a class="btn btn-ghost" href="#contact">Let’s Work Together</a>
+          </div>
+          <div class="quick-stats">
+            <article class="metric-card"><strong><span class="counter" data-target="5">0</span>+</strong><span>Projects built</span></article>
+            <article class="metric-card"><strong><span class="counter" data-target="8">0</span>+</strong><span>Certifications</span></article>
+            <article class="metric-card"><strong><span class="counter" data-target="1">0</span></strong><span>YouTube channel</span></article>
+          </div>
+        </div>
+        <aside class="hero-panel glass-card" data-aos="fade-left">
+          <div class="profile-card">
+            <div class="avatar">
+              <img src="Gemini_Generated_Image_6ge9646ge9646ge9.png" alt="">
+            </div>
+            <div>
+              <div class="status-pill">● Available for student collaborations</div>
+              <h2 style="margin-top:.8rem;font-family:var(--font-display)">Growth dashboard</h2>
+              <p class="muted">Tracking the mission to scale student-first AI learning through projects, content, and experiments.</p>
+            </div>
+          </div>
+          <div class="floating-note">
+            <strong>Subscriber goal</strong>
+            <div style="display:flex;justify-content:space-between;gap:1rem;margin-top:.35rem"><span id="subCurrent">12</span><span>Goal: 10,000</span></div>
+            <div class="kpi-bar"><div class="kpi-fill" id="subFill"></div></div>
+          </div>
+          <div class="floating-note">
+            <strong>Total channel views</strong>
+            <div style="font-family:var(--font-display);font-size:var(--text-xl);margin-top:.35rem"><span class="counter" data-target="10234">0</span>+</div>
+          </div>
+          <div class="floating-note">
+            <strong>Current focus</strong>
+            <p class="muted" style="margin-top:.35rem">Python automation, AI explainers for students, portfolio upgrades, and smarter project storytelling.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="stats">
+      <div class="container" data-aos="fade-up">
+        <span class="eyebrow">Proof of work</span>
+        <h2 class="section-title">Numbers that support the story.</h2>
+        <p class="section-copy">A fast stats strip makes your student-builder identity measurable instead of generic.</p>
+        <div class="stats-grid">
+          <article class="stat-card card"><h3><span class="counter" data-target="5">0</span>+</h3><p>Portfolio projects shipped across Python, SQLite, JSON and ML.</p></article>
+          <article class="stat-card card"><h3><span class="counter" data-target="9">0</span>+</h3><p>Certificates completed in Python, prompt engineering and Tailwind.</p></article>
+          <article class="stat-card card"><h3><span class="counter" data-target="12">0</span>+</h3><p>Subscribers and growing with a 10,000 milestone target.</p></article>
+          <article class="stat-card card"><h3><span class="counter" data-target="500">0</span>+</h3><p>Students impacted as an aspirational education mission metric.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">About me</span>
+        <div class="about-grid">
+          <div class="card" data-aos="fade-up">
+            <h2 class="section-title">A student creator with a real AI mission.</h2>
+            <p class="section-copy">I started NeuralSyntax in November 2025 because most AI content was either repetitive, expensive, incomplete, or not built for students. My goal is to make AI education accessible, affordable, and practical for learners who want clarity instead of hype.</p>
+            <div class="tags">
+              <span class="tag">Class 12 • Delhi</span>
+              <span class="tag">AI Education</span>
+              <span class="tag">Python Tools</span>
+              <span class="tag">Content Strategy</span>
+              <span class="tag">Student Growth</span>
+            </div>
+          </div>
+          <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3 style="font-family:var(--font-display);font-size:var(--text-xl)">My journey</h3>
+            <div class="timeline" style="margin-top:1rem">
+              <div class="timeline-item">
+                <strong>Founder — NeuralSyntax</strong>
+                <p class="muted">Launched a student-first AI and technology channel focused on clear, affordable learning.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Prudence School, New Delhi</strong>
+                <p class="muted">Humanities stream while scaling educational content and technical side projects.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Technical bootcamps & certifications</strong>
+                <p class="muted">Prompt engineering, Python, Tailwind CSS, and practical workflow learning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Skills & stack</span>
+        <h2 class="section-title" data-aos="fade-up">What I build with.</h2>
+        <p class="section-copy" data-aos="fade-up">Recruiters usually scan this section first, so the stack is grouped and easy to read.</p>
+        <div class="skills-grid">
+          <div class="card" data-aos="fade-up">
+            <div class="skill-list">
+              <div class="skill-row"><div class="skill-head"><strong>Python</strong><span>90%</span></div><div class="skill-bar"><span style="width:90%"></span></div></div>
+              <div class="skill-row"><div class="skill-head"><strong>HTML / CSS</strong><span>92%</span></div><div class="skill-bar"><span style="width:92%"></span></div></div>
+              <div class="skill-row"><div class="skill-head"><strong>JavaScript</strong><span>80%</span></div><div class="skill-bar"><span style="width:80%"></span></div></div>
+              <div class="skill-row"><div class="skill-head"><strong>AI / Prompt Engineering</strong><span>86%</span></div><div class="skill-bar"><span style="width:86%"></span></div></div>
+              <div class="skill-row"><div class="skill-head"><strong>SQLite / JSON Storage</strong><span>78%</span></div><div class="skill-bar"><span style="width:78%"></span></div></div>
+              <div class="skill-row"><div class="skill-head"><strong>Tailwind / UI Design</strong><span>84%</span></div><div class="skill-bar"><span style="width:84%"></span></div></div>
+            </div>
+          </div>
+          <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3 style="font-family:var(--font-display);font-size:var(--text-xl)">Tech cloud</h3>
+            <div class="tags" style="margin-top:1rem">
+              <span class="tag">Python</span><span class="tag">SQLite3</span><span class="tag">Machine Learning</span><span class="tag">Pyodide</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Tailwind CSS</span><span class="tag">JSON</span><span class="tag">GitHub</span><span class="tag">Prompt Engineering</span><span class="tag">YouTube Strategy</span>
+            </div>
+            <div class="floating-note" style="margin-top:1rem">
+              <strong>Currently learning</strong>
+              <p class="muted" style="margin-top:.4rem">Deep learning concepts, LLM use-cases for students, and better interactive educational products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Featured work</span>
+        <h2 class="section-title" data-aos="fade-up">Projects in a modern bento grid.</h2>
+        <p class="section-copy" data-aos="fade-up">Each card now includes code and demo buttons, filters, and improved descriptions, including a fixed ML card.</p>
+        <div class="project-filter" data-aos="fade-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+          <button class="filter-btn" data-filter="ai">AI</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+        </div>
+        <div class="bento-grid">
+          <article class="project-card card large" data-category="python" data-aos="fade-up">
+            <span class="eyebrow">Full-Stack Desktop</span>
+            <h3>TaskFlow SQLite Desk App</h3>
+            <p>A GUI productivity app using SQLite3 for persistent storage, a live threaded clock, dynamic task toggling, and export-ready reports.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">SQLite3</span><span class="tag">Desktop UI</span></div>
+            <div class="project-links">
+              <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">View Code</a>
+              <a class="btn btn-ghost" href="#contact">Live Demo</a>
+            </div>
+          </article>
+          <article class="project-card card" data-category="python" data-aos="fade-up" data-aos-delay="80">
+            <span class="eyebrow">Security & File I/O</span>
+            <h3>Secure Diary Logger</h3>
+            <p>Encrypted diary logging with custom character transformation logic, search support, and automated local backups.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Encryption Logic</span><span class="tag">Backup</span></div>
+            <div class="project-links"><a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">View Code</a><a class="btn btn-ghost" href="#contact">Live Demo</a></div>
+          </article>
+          <article class="project-card card" data-category="python" data-aos="fade-up" data-aos-delay="120">
+            <span class="eyebrow">Data Persistence</span>
+            <h3>JSON Contact Manager</h3>
+            <p>Local CRUD contact storage with search-by-name filtering, edit flows, and clean JSON-based persistence.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">JSON</span><span class="tag">CRUD</span></div>
+            <div class="project-links"><a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">View Code</a><a class="btn btn-ghost" href="#contact">Live Demo</a></div>
+          </article>
+          <article class="project-card card" data-category="python" data-aos="fade-up">
+            <span class="eyebrow">Automation</span>
+            <h3>Smart Report Card Generator</h3>
+            <p>Logic-driven grade and percentage calculator that processes multi-subject marks and exports clean report-card text files.</p>
+            <div class="tags"><span class="tag">Automation</span><span class="tag">Python</span><span class="tag">Education</span></div>
+            <div class="project-links"><a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">View Code</a><a class="btn btn-ghost" href="#contact">Live Demo</a></div>
+          </article>
+          <article class="project-card card large tall" data-category="ai" data-aos="fade-up" data-aos-delay="60">
+            <span class="eyebrow">ML</span>
+            <h3>Student Performance Prediction Prototype</h3>
+            <p>A beginner-friendly machine learning experiment that analyzes study-related inputs to estimate performance trends, turning education data into explainable insights. This replaces the copy-pasted description and gives the ML card a proper identity.</p>
+            <div class="tags"><span class="tag">Machine Learning</span><span class="tag">Python</span><span class="tag">Student Analytics</span></div>
+            <div class="project-links"><a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">View Code</a><a class="btn btn-ghost" href="#contact">Live Demo</a></div>
+          </article>
+          <article class="project-card card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+            <span class="eyebrow">Web</span>
+            <h3>Portfolio Revamp System</h3>
+            <p>A polished personal site with live counters, dark-light theme switching, AOS animations, smart navigation, and an interactive Python playground.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <div class="project-links"><a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">View Code</a><a class="btn btn-ghost" href="#home">Live Demo</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="youtube">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Certificates</span>
+        <h2 class="section-title" data-aos="fade-up">In this section I have shocased all the certificate names in a table that i have earned.</h2>
+        <section class="section" id="certificates">
+  <div class="container">
+    <span class="eyebrow" data-aos="fade-up">Certificates</span>
+    <h2 class="section-title" data-aos="fade-up">Here are the certificates I have earned.</h2>
+    <p class="section-copy" data-aos="fade-up">
+      A curated list of my certifications, course names, issuing organizations, and completion dates.
+    </p>
+
+    <div class="card" data-aos="fade-up" style="margin-top: 2rem; padding: 0; overflow: hidden;">
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: separate; border-spacing: 0;">
+          <thead>
+            <tr style="background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));">
+              <th style="padding: 1.15rem 1.75rem; text-align: left; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); color: var(--color-primary); font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: .08em; text-transform: uppercase;">
+                Course Name
+              </th>
+              <th style="padding: 1.15rem 1.75rem; text-align: left; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); color: var(--color-primary); font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: .08em; text-transform: uppercase;">
+                Issuing Organization
+              </th>
+              <th style="padding: 1.15rem 1.75rem; text-align: left; border-bottom: 1px solid var(--color-border); color: var(--color-primary); font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: .08em; text-transform: uppercase;">
+                Date
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                ChatGPT Mastery 2025
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                SeekheIndia (Anjni Computer Education)
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                Prompt Engineering with ChatGPT
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                SeekheIndia
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                Tailwind CSS: Style Apps Like a Design Guru
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                DevTown (Microsoft Student Chapter - MSIT)
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                18 Jul 2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                Tailwind CSS: Style Apps Like a Design Guru
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                DevTown (Google Developer Groups - VIT-AP)
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                18 Jul 2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                Tailwind CSS: Style Apps Like a Design Guru
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                DevTown (MSC, MSIT Chapter)
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                16 Jul 2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                Python Zero to Hero
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                DevTown (Google Developer Groups - VIT-AP)
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                14 Jun 2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                Python Zero to Hero
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                DevTown (Microsoft Student Chapter - MSIT)
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                14 Jun 2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                Python Zero to Hero
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+                DevTown (MSC, MSIT Chapter)
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--color-border); white-space: nowrap;">
+                12 Jun 2025
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border);">
+                Certificate of Appreciation
+              </td>
+              <td style="padding: 1.15rem 1.75rem; border-right: 1px solid var(--color-border);">
+                DevTown
+              </td>
+              <td style="padding: 1.15rem 1.75rem; white-space: nowrap;">
+                11 Jul 2025
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+        <div class="social-row" style="margin-top:1.2rem" data-aos="fade-up">
+          <a href="https://www.youtube.com/@NeuralSyntax-y1m" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://t.me/neuralsyntax1" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://www.linkedin.com/in/khushluck-singh-0298493bb?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/guddu.singh2023" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Experience</span>
+        <h2 class="section-title" data-aos="fade-up">Positioning the work professionally.</h2>
+        <div class="experience-grid">
+          <article class="role-card card" data-aos="fade-up">
+            <h3>Founder — NeuralSyntax</h3>
+            <p>Building an AI education brand aimed at helping students learn practical tools without expensive barriers.</p>
+          </article>
+          <article class="role-card card" data-aos="fade-up" data-aos-delay="80">
+            <h3>Content Architect</h3>
+            <p>Planning educational scripts, structuring explainers, and turning AI concepts into student-friendly learning content.</p>
+          </article>
+          <article class="role-card card" data-aos="fade-up" data-aos-delay="120">
+            <h3>Python Developer</h3>
+            <p>Creating utility projects that combine logic, data storage, automation, and learning-centered workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard-section">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Growth dashboard</span>
+        <h2 class="section-title" data-aos="fade-up">A portfolio KPI layer that fits your brand.</h2>
+        <div class="dashboard">
+          <article class="counter-box card" data-aos="fade-up">
+            <strong><span id="goalProgressText">12</span> / 10,000</strong>
+            <p class="muted">Subscriber progress toward your public milestone.</p>
+            <div class="kpi-bar"><div class="kpi-fill" id="goalProgressFill"></div></div>
+            <div class="mini-list">
+              <div class="mini-item"><span>Total Views</span><strong>10,234+</strong></div>
+              <div class="mini-item"><span>Videos Planned</span><strong>24</strong></div>
+              <div class="mini-item"><span>Active Learning Tracks</span><strong>3</strong></div>
+            </div>
+          </article>
+          <article class="counter-box card" data-aos="fade-up" data-aos-delay="100">
+            <strong>Audience trust</strong>
+            <p class="muted">Use this area to surface believable milestones and channel proof as your numbers grow.</p>
+            <div class="mini-list">
+              <div class="mini-item"><span>Projects documented</span><strong>5</strong></div>
+              <div class="mini-item"><span>Certificates earned</span><strong>9</strong></div>
+              <div class="mini-item"><span>School + creator dual track</span><strong>Live</strong></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Testimonials</span>
+        <h2 class="section-title" data-aos="fade-up">Social proof builds trust faster.</h2>
+        <p class="section-copy" data-aos="fade-up">Use real teacher, classmate, or audience feedback here. Placeholder-style examples are included so the section design is ready.</p>
+        <div class="testimonial-grid">
+          <article class="card" data-aos="fade-up">
+            <p class="quote">“Khushluck explains difficult AI concepts in a way students can actually understand and use.”</p>
+            <div class="person"><div class="person-badge">P</div><div><strong>Prudence School Mentor</strong><p class="muted">Teacher feedback slot</p></div></div>
+          </article>
+          <article class="card" data-aos="fade-up" data-aos-delay="80">
+            <p class="quote">“The projects feel practical, not copied. You can tell he is building with real student problems in mind.”</p>
+            <div class="person"><div class="person-badge">A</div><div><strong>YouTube viewer</strong><p class="muted">Audience proof slot</p></div></div>
+          </article>
+          <article class="card" data-aos="fade-up" data-aos-delay="120">
+            <p class="quote">“His consistency across studies, content, and coding is what makes his profile memorable.”</p>
+            <div class="person"><div class="person-badge">C</div><div><strong>Classmate / collaborator</strong><p class="muted">Peer recommendation slot</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section playground" id="playground">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Interactive code playground</span>
+        <h2 class="section-title" data-aos="fade-up">Run Python in the browser with Pyodide.</h2>
+        <p class="section-copy" data-aos="fade-up">This gives visitors a live, terminal-style way to test simple logic directly on your portfolio.</p>
+        <div class="playground-grid">
+          <article class="terminal" data-aos="fade-up">
+            <strong style="display:block;margin-bottom:.8rem;color:#8ef3f8">editor.py</strong>
+            <textarea id="pythonCode">students = [82, 91, 76, 88, 95]
+average = sum(students) / len(students)
+print(f"Average score: {average:.2f}")
+
+focus = ["Python", "AI", "Education"]
+print("Mission stack:", ", ".join(focus))</textarea>
+            <div class="playground-actions">
+              <button class="btn btn-primary" id="runCode">Run Code</button>
+              <button class="btn btn-secondary" id="loadSample">Load Sample</button>
+            </div>
+          </article>
+          <article class="terminal" data-aos="fade-up" data-aos-delay="100">
+            <strong style="display:block;margin-bottom:.8rem;color:#8ef3f8">output</strong>
+            <pre class="terminal-output" id="pythonOutput">Pyodide is loading…</pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Blog / notes</span>
+        <h2 class="section-title" data-aos="fade-up">Turn the blog link into real authority.</h2>
+        <div class="blog-grid">
+          <article class="blog-card card" data-aos="fade-up">
+            <span class="eyebrow">AI tutorial</span>
+            <h3>How students should actually use AI tools</h3>
+            <p>Write practical guidance on prompts, checking accuracy, and avoiding blind dependence.</p>
+          </article>
+          <article class="blog-card card" data-aos="fade-up" data-aos-delay="80">
+            <span class="eyebrow">Coding guide</span>
+            <h3>Python projects that teach logic fast</h3>
+            <p>Showcase beginner-friendly tools like calculators, managers, and report generators.</p>
+          </article>
+          <article class="blog-card card" data-aos="fade-up" data-aos-delay="120">
+            <span class="eyebrow">Growth</span>
+            <h3>Building NeuralSyntax in public</h3>
+            <p>Share your learning journey, mistakes, and the next systems you want to build.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="learning">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">What I’m learning</span>
+        <h2 class="section-title" data-aos="fade-up">Showing active growth matters.</h2>
+        <div class="learning-grid">
+          <article class="card" data-aos="fade-up"><strong>Deep learning basics</strong><p class="muted">Understanding model intuition beyond surface-level AI tool use.</p></article>
+          <article class="card" data-aos="fade-up" data-aos-delay="80"><strong>LLM workflows</strong><p class="muted">Exploring practical prompt systems and AI-supported study workflows.</p></article>
+          <article class="card" data-aos="fade-up" data-aos-delay="120"><strong>Better educational UX</strong><p class="muted">Designing interfaces that help students learn faster with less confusion.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <span class="eyebrow" data-aos="fade-up">Contact</span>
+        <h2 class="section-title" data-aos="fade-up">A functional contact form, not a fake one.</h2>
+        <div class="contact-grid">
+          <article class="card" data-aos="fade-up">
+            <p class="section-copy">This form is wired for Formspree. Replace the placeholder endpoint with your real Formspree form ID and messages will actually be delivered.</p>
+            <div class="contact-list">
+              <div class="contact-item"><strong>Email</strong><span class="muted">singhkhushluck8@gmail.com</span></div>
+              <div class="contact-item"><strong>Location</strong><span class="muted">New Delhi, India</span></div>
+              <div class="contact-item"><strong>Best for</strong><span class="muted">Student collaborations, portfolio reviews, channel partnerships, project discussions</span></div>
+            </div>
+            <div class="social-row">
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="card" data-aos="fade-up" data-aos-delay="100">
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+              <label>Full name<input type="text" name="name" placeholder="Your name" required></label>
+              <label>Email address<input type="email" name="email" placeholder="you@example.com" required></label>
+              <label>Message<textarea name="message" placeholder="Tell me about your project or collaboration idea." required></textarea></label>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>Khushluck Singh</strong>
+        <small style="display:block">Made with code, curiosity, and a student-first AI mission.</small>
+      </div>
+      <small>© 2026 Khushluck Singh • NeuralSyntax • Back to top ready</small>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    html.setAttribute('data-theme', currentTheme);
+    const updateThemeIcon = () => themeToggle.textContent = html.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+    updateThemeIcon();
+    themeToggle.addEventListener('click', () => {
+      currentTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', currentTheme);
+      updateThemeIcon();
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.Typed) {
+        new Typed('#typedRoles', {
+          strings: ['Developer', 'AI Educator', 'YouTuber', 'Growth Strategist'],
+          typeSpeed: 55,
+          backSpeed: 30,
+          backDelay: 1400,
+          loop: true
+        });
+      }
+      if (window.AOS) AOS.init({ duration: 700, once: true, offset: 80 });
+    });
+
+    const counters = document.querySelectorAll('.counter');
+    const animateCounter = el => {
+      const target = +el.dataset.target;
+      const duration = 1400;
+      const startTime = performance.now();
+      const step = now => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        el.textContent = Math.floor(progress * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.done) {
+          entry.target.dataset.done = 'true';
+          animateCounter(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    const subscriberCurrent = 12;
+    const subscriberGoal = 10000;
+    const subscriberPercent = Math.max(1, (subscriberCurrent / subscriberGoal) * 100);
+    document.getElementById('subCurrent').textContent = subscriberCurrent.toLocaleString();
+    document.getElementById('subFill').style.width = subscriberPercent + '%';
+    document.getElementById('goalProgressText').textContent = subscriberCurrent.toLocaleString();
+    document.getElementById('goalProgressFill').style.width = subscriberPercent + '%';
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        projectCards.forEach(card => {
+          card.style.display = filter === 'all' || card.dataset.category === filter ? '' : 'none';
+        });
+      });
+    });
+
+    const sections = document.querySelectorAll('main section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    sections.forEach(section => navObserver.observe(section));
+
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorRing = document.querySelector('.cursor-ring');
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2, ringX = mouseX, ringY = mouseY;
+    window.addEventListener('mousemove', e => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    });
+    const animateRing = () => {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorRing.style.transform = `translate(${ringX}px, ${ringY}px)`;
+      requestAnimationFrame(animateRing);
+    };
+    animateRing();
+    document.querySelectorAll('a, button, input, textarea').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorRing.style.width = '56px'; cursorRing.style.height = '56px';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorRing.style.width = '34px'; cursorRing.style.height = '34px';
+      });
+    });
+
+    let pyodide;
+    const output = document.getElementById('pythonOutput');
+    async function initPyodideApp() {
+      try {
+        output.textContent = 'Loading Python runtime…';
+        pyodide = await loadPyodide();
+        output.textContent = 'Pyodide ready. Click "Run Code" to execute Python.';
+      } catch (error) {
+        output.textContent = 'Failed to load Pyodide. Check your internet connection.\n\n' + error;
+      }
+    }
+    window.addEventListener('load', initPyodideApp);
+
+    document.getElementById('runCode').addEventListener('click', async () => {
+      if (!pyodide) {
+        output.textContent = 'Python runtime is still loading…';
+        return;
+      }
+      const code = document.getElementById('pythonCode').value;
+      output.textContent = 'Running…';
+      let stdout = '';
+      pyodide.setStdout({ batched: text => stdout += text + '\n' });
+      try {
+        await pyodide.runPythonAsync(code);
+        output.textContent = stdout.trim() || 'Code ran successfully with no output.';
+      } catch (error) {
+        output.textContent = 'Error:\n' + error;
+      }
+    });
+
+    document.getElementById('loadSample').addEventListener('click', () => {
+      document.getElementById('pythonCode').value = `channel = {"subscribers": 12, "goal": 10000, "views": 10234}\nprogress = (channel["subscribers"] / channel["goal"]) * 100\nprint(f"Subscriber progress: {progress:.2f}%")\nprint(f"Views: {channel['views']}")\n\nprojects = ["SQLite app", "Diary logger", "Contact manager", "Report generator", "ML prototype"]\nfor i, name in enumerate(projects, start=1):\n    print(f"{i}. {name}")`;
+    });
+  </script>
+</body>
+</html>
